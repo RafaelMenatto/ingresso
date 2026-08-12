@@ -1,0 +1,54 @@
+<!DOCTYPE html> <!-- Declara que o documento é HTML5 -->
+<html lang="pt-BR"> <!-- Abre o documento HTML com idioma português do Brasil -->
+
+<head> <!-- Início da área de configurações/cabeçalho da página -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 (aceita acentos) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna o layout responsivo para telas de dispositivos móveis -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Acelera a conexão com o servidor do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Pré-conecta ao servidor de fontes para carregá-las mais rápido -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet"> <!-- Carrega as fontes Chakra Petch e Inter do Google Fonts -->
+    <link rel="stylesheet" href="./styles/_reset.css"> <!-- Aplica o CSS de reset (zera estilos padrão do navegador) -->
+    <link rel="stylesheet" href="./styles/style.css"> <!-- Aplica o CSS principal da página -->
+    <title>e-Ticket</title> <!-- Define o título exibido na aba do navegador -->
+</head>
+
+<body> <!-- Início do conteúdo visível da página -->
+    <header> <!-- Cabeçalho da página -->
+        <img class="logo" src="./assets/PNG/Logo e-tricket.png" alt="Logo"> <!-- Imagem do logotipo e-Ticket -->
+    </header>
+    <main class="container"> <!-- Conteúdo principal, estilizado pela classe "container" -->
+
+        <div class="grafismo"></div> <!-- Elemento decorativo verde no topo -->
+        <h1>Compre seu <span>ingresso</span></h1> <!-- Título principal; a palavra "ingresso" fica destacada pelo <span> -->
+        <form action=""> <!-- Formulário de compra (ação vazia, a compra é feita via JavaScript) -->
+            <label class="input-group"> <!-- Rótulo do grupo de campos -->
+                Escolha o tipo <!-- Texto de instrução do primeiro campo -->
+                <select name="tipo-ingresso" id="tipo-ingresso"> <!-- Menu suspenso para escolher o tipo de ingresso -->
+                    <option value="inferior">Cadeira inferior</option> <!-- Opção "Cadeira inferior" com valor "inferior" -->
+                    <option value="superior">Cadeira superior</option> <!-- Opção "Cadeira superior" com valor "superior" -->
+                    <option value="pista">Pista</option> <!-- Opção "Pista" com valor "pista" -->
+                </select>
+            </label>
+            <label class="input-group">Qtde. <!-- Rótulo do campo de quantidade -->
+                <input type="number" id="qtd" placeholder="00" min="1" max="10"> <!-- Campo numérico para a quantidade (mínimo 1, máximo 10) -->
+            </label>
+            <button onclick="comprar()" type="button">Comprar</button> <!-- Botão que chama a função comprar() do JavaScript -->
+        </form>
+        <img class="hachuras" src="./assets/SVG/Hachuras.svg" alt=""> <!-- Imagem decorativa de hachuras -->
+        <section> <!-- Seção com as quantidades disponíveis -->
+            <h2>Quantidade disponível</h2> <!-- Título da seção -->
+
+            <ul class="lista"> <!-- Lista com o estoque de cada tipo -->
+                <li>Pista<span id="qtd-pista">100</span></li> <!-- Estoque da pista (inicial 100), atualizado pelo JS -->
+                <li>Cadeira superior<span id="qtd-superior">200</span></li> <!-- Estoque da cadeira superior (inicial 200) -->
+                <li>Cadeira inferior<span id="qtd-inferior">400</span></li> <!-- Estoque da cadeira inferior (inicial 400) -->
+                
+            </ul>
+            <img src="./assets/Ingresso.svg" alt=""> <!-- Imagem decorativa de um ingresso -->
+        </section>
+    </main>
+
+    <script src="js/app.js"></script> <!-- Carrega o arquivo JavaScript com a lógica de compra -->
+</body>
+
+</html>

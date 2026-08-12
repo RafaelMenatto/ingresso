@@ -1,0 +1,137 @@
+body { /* Estilos aplicados ao corpo da página inteira */
+    width: 1440px; /* Largura fixa da página */
+    height: 100vh; /* Altura igual à tela visível do navegador */
+    background: linear-gradient(180deg, rgba(1, 8, 14, 1) 1%, rgba(4, 24, 50, 1) 39%, rgba(1, 8, 14, 1) 88%); /* Fundo em gradiente vertical (azul escuro) */
+    margin: 5% auto; /* Margem vertical de 5% e centralização horizontal automática */
+    color: #fff; /* Cor do texto em branco */
+}
+
+header { /* Cabeçalho da página */
+    width: 1200px; /* Largura do cabeçalho */
+    margin: 2rem auto; /* Margem superior/inferior de 2rem e centralização horizontal */
+}
+
+header .logo { /* Imagem do logotipo dentro do cabeçalho */
+    width: 196.8px; /* Largura do logotipo */
+    padding-left: 2rem; /* Espaçamento interno à esquerda */
+}
+
+main.container { /* Conteúdo principal */
+    width: 1200px; /* Largura do conteúdo principal */
+    height: auto; /* Altura automática conforme o conteúdo */
+    border: 2px solid #00F4BF; /* Borda verde neon ao redor */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 4.5rem 6.38rem; /* Espaçamento interno vertical e horizontal */
+    background-image: url('../assets/PNG/Imagem\ com\ borda.png'); /* Imagem de fundo */
+    background-size: cover; /* Faz a imagem preencher toda a área */
+    position: relative; /* Posicionamento relativo para os elementos filhos absolutos */
+}
+
+main.container .grafismo { /* Elemento decorativo verde */
+    background: url('../assets/SVG/Grafismo\ verde.svg'); /* Imagem decorativa como fundo */
+    width: 31.9375rem; /* Largura do elemento */
+    height: 2.0625rem; /* Altura do elemento */
+    position: absolute; /* Posiciona de forma absoluta em relação ao main */
+    top: -19px; /* Desloca um pouco acima da borda superior */
+    left: -2px; /* Desloca um pouco para a esquerda */
+}
+
+main.container h1 { /* Título principal */
+    font-family: 'Chakra Petch', sans-serif; /* Usa a fonte Chakra Petch */
+    font-size: 5rem; /* Tamanho grande do título */
+    line-height: 110%; /* Espaçamento entre linhas */
+}
+
+main.container h1 span { /* Palavra "ingresso" destacada no título */
+    color: #1875E8; /* Cor azul */
+}
+
+form { /* Formulário de compra */
+    display: flex; /* Layout flexbox para alinhar os campos em linha */
+    align-items: flex-end; /* Alinha os itens na parte inferior */
+    gap: 2rem; /* Espaço de 2rem entre os itens */
+    margin: 2.5rem 0; /* Margem vertical do formulário */
+}
+
+form .input-group { /* Cada grupo de campo do formulário */
+    display: flex; /* Layout flexbox */
+    flex-direction: column; /* Empilha rótulo e campo na vertical */
+    align-items: flex-start; /* Alinha à esquerda */
+    gap: .5rem; /* Espaço entre rótulo e campo */
+
+    font-family: 'Inter', sans-serif; /* Fonte Inter para os textos */
+    font-weight: 700; /* Texto em negrito */
+    font-size: 1.5rem; /* Tamanho da fonte */
+}
+
+form .input-group select,
+form .input-group input { /* Estilos compartilhados pelo select e input */
+    background: none; /* Fundo transparente por padrão */
+    color: white; /* Texto branco */
+    border: 1px solid #00F4BF; /* Borda verde neon */
+    border-radius: .5rem; /* Cantos arredondados */
+    height: 3.5rem; /* Altura dos campos */
+    padding: .5rem 1rem; /* Espaçamento interno */
+    font-size: 1.3rem; /* Tamanho do texto dos campos */
+}
+
+form .input-group select { /* Menu suspenso específico */
+    width: 24.75rem; /* Largura do menu */
+    appearance: none; /* Remove a aparência padrão do navegador */
+    background: url('../assets/PNG/Arrow\ down.png') no-repeat right 1rem top 50%; /* Seta personalizada à direita */
+    color: black; /* Texto preto */
+    background-color: white; /* Fundo branco */
+}
+
+form .input-group input { /* Campo de quantidade */
+    width: 60px; /* Largura pequena do campo numérico */
+}
+
+form .input-group input::placeholder { /* Texto "00" exibido quando o campo está vazio */
+    text-align: center; /* Centraliza o texto do placeholder */
+}
+
+form button { /* Botão "Comprar" */
+    color: white; /* Texto branco */
+    font-size: 1.5rem; /* Tamanho do texto */
+    border: none; /* Sem borda */
+    background-color: #1875E8; /* Fundo azul */
+    padding: 1rem 1.5rem; /* Espaçamento interno */
+    border-radius: 1rem; /* Cantos bem arredondados */
+    width: 13rem; /* Largura do botão */
+    box-shadow: 0px 0px 20px 0px rgba(24, 117, 232, 0.50); /* Brilho azul ao redor do botão */
+    cursor: pointer; /* Cursor de "mãozinha" ao passar o mouse */
+}
+
+.hachuras { /* Imagem decorativa de hachuras */
+    margin: 5.19rem 0; /* Margem vertical da imagem */
+}
+
+.container section { /* Seção das quantidades disponíveis */
+    display: flex; /* Layout flexbox */
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
+    align-items: flex-start; /* Alinha os itens no topo */
+    align-self: stretch; /* Faz a seção esticar em toda a largura */
+}
+
+.container section h2 { /* Título "Quantidade disponível" */
+    font-size: 2rem; /* Tamanho do título */
+}
+
+.container section ul { /* Lista de quantidades */
+    display: flex; /* Layout flexbox */
+    flex-direction: column; /* Empilha os itens na vertical */
+    align-items: flex-end; /* Alinha os itens à direita */
+    gap: 1rem; /* Espaço entre os itens da lista */
+
+    font-size: 1.5rem; /* Tamanho do texto */
+    font-family: 'Inter', sans-serif; /* Fonte Inter */
+    font-weight: 400; /* Peso normal */
+}
+
+.container section ul li span { /* Números de quantidade exibidos */
+    color: #00F4BF; /* Cor verde neon */
+    font-style: italic; /* Texto em itálico */
+    font-size: 2rem; /* Tamanho maior que o texto do item */
+    padding-left: 1.5rem; /* Espaço entre o nome e o número */
+}

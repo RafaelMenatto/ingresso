@@ -1,0 +1,25 @@
+* { /* Seleciona todos os elementos da página */
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o espaçamento interno padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui borda e padding no cálculo do tamanho total do elemento */
+}
+
+h1,
+h2,
+h3 { /* Todos os títulos de nível 1, 2 e 3 */
+    font-family: 'Chakra Petch', sans-serif; /* Aplica a fonte Chakra Petch aos títulos */
+}
+
+ul { /* Todas as listas não ordenadas */
+    list-style-type: none; /* Remove as bolinhas/marcadores das listas */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button { /* Botões de seta do campo numérico no Chrome/Safari */
+    -webkit-appearance: none; /* Remove a aparência padrão das setinhas */
+    margin: 0; /* Remove a margem desses botões */
+}
+
+input[type="number"] { /* Campos de entrada do tipo número */
+    -moz-appearance: textfield; /* Remove as setinhas também no Firefox */
+}
