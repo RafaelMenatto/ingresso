@@ -1,13 +1,15 @@
 body { /* Estilos aplicados ao corpo da página inteira */
-    width: 1440px; /* Largura fixa da página */
-    height: 100vh; /* Altura igual à tela visível do navegador */
+    width: 100%; /* Largura total da tela */
+    max-width: 1440px; /* Largura máxima da página */
+    min-height: 100vh; /* Altura mínima igual à tela visível do navegador */
     background: linear-gradient(180deg, rgba(1, 8, 14, 1) 1%, rgba(4, 24, 50, 1) 39%, rgba(1, 8, 14, 1) 88%); /* Fundo em gradiente vertical (azul escuro) */
     margin: 5% auto; /* Margem vertical de 5% e centralização horizontal automática */
     color: #fff; /* Cor do texto em branco */
 }
 
 header { /* Cabeçalho da página */
-    width: 1200px; /* Largura do cabeçalho */
+    width: 100%; /* Largura total */
+    max-width: 1200px; /* Largura máxima do cabeçalho */
     margin: 2rem auto; /* Margem superior/inferior de 2rem e centralização horizontal */
 }
 
@@ -17,7 +19,8 @@ header .logo { /* Imagem do logotipo dentro do cabeçalho */
 }
 
 main.container { /* Conteúdo principal */
-    width: 1200px; /* Largura do conteúdo principal */
+    width: 100%; /* Largura total */
+    max-width: 1200px; /* Largura máxima do conteúdo principal */
     height: auto; /* Altura automática conforme o conteúdo */
     border: 2px solid #00F4BF; /* Borda verde neon ao redor */
     margin: 0 auto; /* Centraliza horizontalmente */
@@ -84,7 +87,8 @@ form .input-group select { /* Menu suspenso específico */
 }
 
 form .input-group input { /* Campo de quantidade */
-    width: 60px; /* Largura pequena do campo numérico */
+    width: 5.5rem; /* Largura suficiente para mostrar até 3 dígitos */
+    min-width: 5.5rem; /* Mantém a largura mínima no desktop */
 }
 
 form .input-group input::placeholder { /* Texto "00" exibido quando o campo está vazio */
@@ -134,4 +138,99 @@ form button { /* Botão "Comprar" */
     font-style: italic; /* Texto em itálico */
     font-size: 2rem; /* Tamanho maior que o texto do item */
     padding-left: 1.5rem; /* Espaço entre o nome e o número */
+}
+
+/* ===== Layout responsivo para celulares ===== */
+@media (max-width: 768px) { /* Regras aplicadas em telas de até 768px (celulares) */
+    body {
+        margin: 0 auto; /* Remove a margem vertical no celular */
+    }
+
+    header {
+        margin: 1.5rem auto; /* Margem reduzida */
+        padding: 0 1rem; /* Espaçamento lateral */
+    }
+
+    header .logo {
+        width: 130px; /* Logotipo menor */
+        padding-left: 0; /* Remove o padding esquerdo */
+    }
+
+    main.container {
+        padding: 2.5rem 1rem; /* Padding interno bem menor */
+        border-left: none; /* Borda lateral removida para aproveitar a tela */
+        border-right: none;
+    }
+
+    main.container .grafismo {
+        width: 16rem; /* Grafismo menor */
+        height: 1.2rem;
+    }
+
+    main.container h1 {
+        font-size: 2.6rem; /* Título menor */
+        line-height: 115%; /* Ajuste do espaçamento entre linhas */
+    }
+
+    form {
+        flex-direction: column; /* Campos empilhados na vertical */
+        align-items: stretch; /* Campos ocupam toda a largura */
+        gap: 1rem; /* Espaço menor entre os campos */
+        margin: 1.5rem 0; /* Margem reduzida */
+    }
+
+    form .input-group {
+        width: 100%; /* Grupo ocupa toda a largura */
+    }
+
+    form .input-group select {
+        width: 100%; /* Menu ocupa toda a largura */
+    }
+
+    form .input-group input {
+        width: 100%; /* Campo de quantidade ocupa toda a largura */
+        text-align: center; /* Número centralizado */
+    }
+
+    form button {
+        width: 100%; /* Botão ocupa toda a largura */
+        font-size: 1.3rem; /* Texto do botão menor */
+        padding: .9rem 1rem; /* Espaçamento interno menor */
+    }
+
+    .hachuras {
+        margin: 2.5rem 0; /* Margem vertical reduzida */
+        width: 100%; /* Imagem não estoura a tela */
+    }
+
+    .container section {
+        flex-direction: column; /* Seção empilhada na vertical */
+        align-items: center; /* Centraliza o conteúdo */
+        gap: 2rem; /* Espaço entre os blocos */
+    }
+
+    .container section h2 {
+        font-size: 1.6rem; /* Título da seção menor */
+    }
+
+    .container section ul {
+        align-items: flex-start; /* Lista alinhada à esquerda */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .container section ul li {
+        width: 100%; /* Cada item ocupa a linha inteira */
+        display: flex; /* Flexbox para alinhar nome e número */
+        justify-content: space-between; /* Nome à esquerda e número à direita */
+    }
+
+    .container section ul li span {
+        font-size: 1.6rem; /* Números menores */
+    }
+
+    .container section > img {
+        width: 100%; /* Imagem do ingresso ocupa a largura da tela */
+        max-width: 400px; /* Mas não fica gigante */
+        height: auto; /* Altura proporcional */
+    }
 }
