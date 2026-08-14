@@ -1,96 +1,64 @@
-// Função principal chamada quando o botão "Comprar" é clicado
-function comprar() {
-    // Obtém o elemento <select> do tipo de ingresso pelo seu id
-    let tipo = document.getElementById('tipo-ingresso');
-    // Obtém o elemento <input> da quantidade pelo seu id
-    let qtdInput = document.getElementById('qtd');
-    // Converte o valor digitado (texto) em número inteiro
-    let qtd = parseInt(qtdInput.value);
+function comprar() { // Função principal chamada quando o botão "Comprar" é clicado
+    let tipo = document.getElementById('tipo-ingresso'); // Obtém o elemento <select> do tipo de ingresso pelo seu id
+    let qtdInput = document.getElementById('qtd'); // Obtém o elemento <input> da quantidade pelo seu id
+    let qtd = parseInt(qtdInput.value); // Converte o valor digitado (texto) em número inteiro
 
 
-    // Verificar se a quantidade é um número positivo
-    if (isNaN(qtd) || qtd <= 0) {
-        // Se não for um número válido ou for <= 0, mostra um alerta de erro
-        alert('Por favor, insira uma quantidade válida.');
-        // Encerra a função sem prosseguir com a compra
-        return;
+    if (isNaN(qtd) || qtd <= 0) { // Verificar se a quantidade é um número positivo
+        alert('Por favor, insira uma quantidade válida.'); // Se não for um número válido ou for <= 0, mostra um alerta de erro
+        return; // Encerra a função sem prosseguir com a compra
     }
 
 
-    // Verifica qual opção foi selecionada no <select>
-    if (tipo.value == 'pista') {
-        // Se escolheu "Pista", chama a função de compra da pista com a quantidade
-        comprarPista(qtd);
-    } else if (tipo.value == 'superior') {
-        // Se escolheu "Cadeira superior", chama a função de compra superior
-        comprarSuperior(qtd);
-    } else {
-        // Caso contrário (cadeira inferior), chama a função de compra inferior
-        comprarInferior(qtd);
+    if (tipo.value == 'pista') { // Verifica qual opção foi selecionada no <select>
+        comprarPista(qtd); // Se escolheu "Pista", chama a função de compra da pista com a quantidade
+    } else if (tipo.value == 'superior') { // Se a opção selecionada for "Cadeira superior"
+        comprarSuperior(qtd); // Chama a função de compra superior
+    } else { // Caso contrário (cadeira inferior)
+        comprarInferior(qtd); // Chama a função de compra inferior
     }
 }
 
 
-// Função que processa a compra de ingressos de pista
-function comprarPista(qtd) {
-    // Lê o número atual de ingressos de pista exibidos na página e converte em inteiro
-    let qtdPista = parseInt(document.getElementById('qtd-pista').textContent);
-    if (qtd > qtdPista) {
-        // Se a quantidade pedida é maior que o disponível, mostra alerta de indisponibilidade
-        alert('Quantidade indisponível para tipo pista');
-    } else {
-        // Subtrai a quantidade comprada do total disponível
-        qtdPista = qtdPista - qtd;
-        // Atualiza o número exibido na página com o novo valor
-        document.getElementById('qtd-pista').textContent = qtdPista;
-        // Confirma a compra com uma mensagem de sucesso
-        alert('Compra realizada com sucesso!');
+function comprarPista(qtd) { // Função que processa a compra de ingressos de pista
+    let qtdPista = parseInt(document.getElementById('qtd-pista').textContent); // Lê o número atual de ingressos de pista exibidos na página e converte em inteiro
+    if (qtd > qtdPista) { // Se a quantidade pedida é maior que o disponível
+        alert('Quantidade indisponível para tipo pista'); // Mostra alerta de indisponibilidade
+    } else { // Caso haja estoque suficiente
+        qtdPista = qtdPista - qtd; // Subtrai a quantidade comprada do total disponível
+        document.getElementById('qtd-pista').textContent = qtdPista; // Atualiza o número exibido na página com o novo valor
+        alert('Compra realizada com sucesso!'); // Confirma a compra com uma mensagem de sucesso
     }
 }
 
 
-// Função que processa a compra de ingressos de cadeira superior
-function comprarSuperior(qtd) {
-    // Lê o número atual de ingressos superiores e converte em inteiro
-    let qtdSuperior = parseInt(document.getElementById('qtd-superior').textContent);
-    if (qtd > qtdSuperior) {
-        // Se não há estoque suficiente, informa a indisponibilidade
-        alert('Quantidade indisponível para tipo superior');
-    } else {
-        // Subtrai a quantidade comprada do estoque disponível
-        qtdSuperior = qtdSuperior - qtd;
-        // Atualiza o valor exibido na página
-        document.getElementById('qtd-superior').textContent = qtdSuperior;
-        // Confirma a compra com uma mensagem de sucesso
-        alert('Compra realizada com sucesso!');
+function comprarSuperior(qtd) { // Função que processa a compra de ingressos de cadeira superior
+    let qtdSuperior = parseInt(document.getElementById('qtd-superior').textContent); // Lê o número atual de ingressos superiores e converte em inteiro
+    if (qtd > qtdSuperior) { // Se não há estoque suficiente
+        alert('Quantidade indisponível para tipo superior'); // Informa a indisponibilidade
+    } else { // Caso haja estoque suficiente
+        qtdSuperior = qtdSuperior - qtd; // Subtrai a quantidade comprada do estoque disponível
+        document.getElementById('qtd-superior').textContent = qtdSuperior; // Atualiza o valor exibido na página
+        alert('Compra realizada com sucesso!'); // Confirma a compra com uma mensagem de sucesso
     }
 }
 
 
-// Função que processa a compra de ingressos de cadeira inferior
-function comprarInferior(qtd) {
-    // Lê o número atual de ingressos inferiores e converte em inteiro
-    let qtdInferior = parseInt(document.getElementById('qtd-inferior').textContent);
-    if (qtd > qtdInferior) {
-        // Se não há estoque suficiente, informa a indisponibilidade
-        alert('Quantidade indisponível para tipo inferior');
-    } else {
-        // Subtrai a quantidade comprada do estoque disponível
-        qtdInferior = qtdInferior - qtd;
-        // Atualiza o valor exibido na página
-        document.getElementById('qtd-inferior').textContent = qtdInferior;
-        // Confirma a compra com uma mensagem de sucesso
-        alert('Compra realizada com sucesso!');
+function comprarInferior(qtd) { // Função que processa a compra de ingressos de cadeira inferior
+    let qtdInferior = parseInt(document.getElementById('qtd-inferior').textContent); // Lê o número atual de ingressos inferiores e converte em inteiro
+    if (qtd > qtdInferior) { // Se não há estoque suficiente
+        alert('Quantidade indisponível para tipo inferior'); // Informa a indisponibilidade
+    } else { // Caso haja estoque suficiente
+        qtdInferior = qtdInferior - qtd; // Subtrai a quantidade comprada do estoque disponível
+        document.getElementById('qtd-inferior').textContent = qtdInferior; // Atualiza o valor exibido na página
+        alert('Compra realizada com sucesso!'); // Confirma a compra com uma mensagem de sucesso
     }
 }
 
-// Função auxiliar que recebe um texto e o converte em número inteiro
-function converterParaInteiro(valorString) {
-    // Usa parseInt para transformar a string em um número inteiro
-    return parseInt(valorString);
+function converterParaInteiro(valorString) { // Função auxiliar que recebe um texto e o converte em número inteiro
+    return parseInt(valorString); // Usa parseInt para transformar a string em um número inteiro
 }
 
-// Exemplo de uso
-let valorString = "42"; // Define uma variável com o texto "42"
+let valorString = "42"; // Exemplo de uso: define uma variável com o texto "42"
 let valorInteiro = converterParaInteiro(valorString); // Converte "42" para o número 42
 console.log(valorInteiro);  // Saída esperada: 42

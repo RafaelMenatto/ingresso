@@ -4,7 +4,7 @@ Uma aplicação web interativa e intuitiva desenvolvida para simular a seleção
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 Funcionalidades 
 
 - **Seleção do Tipo de Ingressos:** Permite escolher entre diferentes categorias (*Pista*, *Cadeira Superior* e *Cadeira Inferior*).
 - **Validação de Quantidade:** Aceita entradas numéricas e impede a compra de quantidades inválidas.
