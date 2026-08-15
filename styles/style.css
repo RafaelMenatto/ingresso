@@ -11,11 +11,26 @@ header { /* Cabeçalho da página */
     width: 100%; /* Largura total */
     max-width: 1200px; /* Largura máxima do cabeçalho */
     margin: 2rem auto; /* Margem superior/inferior de 2rem e centralização horizontal */
+    position: relative; /* Posicionamento relativo para o link absoluto */
 }
 
 header .logo { /* Imagem do logotipo dentro do cabeçalho */
     width: 196.8px; /* Largura do logotipo */
     padding-left: 2rem; /* Espaçamento interno à esquerda */
+}
+
+header .github-link { /* Link do ícone do GitHub */
+    position: absolute; /* Posiciona de forma absoluta no cabeçalho */
+    top: 0; /* No topo */
+    right: 0; /* Na direita */
+    color: #fff; /* Cor branca */
+    display: inline-flex; /* Mantém o ícone compacto */
+    align-items: center; /* Centraliza verticalmente */
+    transition: color .2s; /* Transição suave da cor */
+}
+
+header .github-link:hover { /* Ao passar o mouse */
+    color: #00F4BF; /* Fica verde neon */
 }
 
 main.container { /* Conteúdo principal */
@@ -154,6 +169,11 @@ form button { /* Botão "Comprar" */
     header .logo {
         width: 130px; /* Logotipo menor */
         padding-left: 0; /* Remove o padding esquerdo */
+    }
+
+    header .github-link {
+        top: 50%; /* Centraliza verticalmente em relação ao logotipo */
+        transform: translateY(-50%); /* Compensa a centralização */
     }
 
     main.container {
